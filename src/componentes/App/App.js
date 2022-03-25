@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Topo from "../Topo";
 import Home from "../Home";
+import Filme from "../Filme";
 
 import "../App/reset.css";
 import "../App/styles.css";
@@ -14,7 +15,7 @@ export default function App() {
             <Topo />
             <Routes>
                 <Route path="/" element={<Home />} />
-                {/* <Route path="/filme/:idFilme" element={<Filme />} /> */}
+                <Route path="/filme/:idFilme" element={<Filme />} />
             </Routes>
         </BrowserRouter>
     )

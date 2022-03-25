@@ -1,5 +1,6 @@
-import CartazDoFilme from "./CartazDoFilme";
 import styled from "styled-components";
+
+import CartazDoFilme from "./CartazDoFilme";
 
 export default function Home() {
     console.log("Renderizei Home")
@@ -13,6 +14,7 @@ export default function Home() {
 }
 
 const TituloSelecaoDeFilme = styled.h1`
+    font-size: 24px;
     text-align: center;
-    padding: 46px;
+    padding: 43px;
 `

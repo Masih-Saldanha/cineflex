@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 
@@ -22,7 +23,9 @@ export default function CartazDoFilme() {
         <MenuDeFilmes>
             {listaDeFilmes.map(movie => {
                 return (
-                    <img key={movie.id} src={movie.posterURL} alt={movie.title} />
+                    <Link key={movie.id} to={`/filme/${movie.id}`}>
+                        <img src={movie.posterURL} alt={movie.title} />
+                    </Link>
                 )
             })}
         </MenuDeFilmes>
