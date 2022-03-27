@@ -5,21 +5,19 @@ import styled from "styled-components";
 
 export default function CartazDoFilme(props) {
     const { dadosRodape, setDadosRodape } = props;
-    console.log("Renderizei CartazDoFilme");
+    // console.log("Renderizei CartazDoFilme");
     const [listaDeFilmes, setListaDeFilmes] = useState([])
-    console.log("Lista de Filmes: ", listaDeFilmes);
+    // console.log("Lista de Filmes: ", listaDeFilmes);
 
     useEffect(() => {
-        console.log("Entrei no useEffect da lista de filmes");
-
+        // console.log("Entrei no useEffect da lista de filmes");
         const promise = axios.get("https://mock-api.driven.com.br/api/v5/cineflex/movies");
         promise.then(response => {
             const { data } = response;
-            console.log("Dados da API:", data);
+            // console.log("Dados da API:", data);
             setListaDeFilmes(data);
         })
-        
-        console.log("Sai do useEffect da lista de filmes");
+        // console.log("Sai do useEffect da lista de filmes");
     }, [])
 
     return (

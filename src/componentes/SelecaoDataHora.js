@@ -10,7 +10,7 @@ export default function SelecaoDataHora(props) {
             <BotoesHorario>
                 {showtimes.map(hora => {
                     return (
-                        <Link onClick={() => setDadosRodape({...dadosRodape, diaDaSemana: weekday, hora: hora.name})} key={hora.id} to={`/sessao/${hora.id}`}>
+                        <Link onClick={() => setDadosRodape({...dadosRodape, diaDaSemana: weekday, data: date, hora: hora.name})} key={hora.id} to={`/sessao/${hora.id}`}>
                             <button key={hora.id}>{hora.name}</button>
                         </Link>
                     )
@@ -28,7 +28,6 @@ const BotoesHorario = styled.menu`
     margin-top: 24px;
     margin-left: 24px;
     margin-bottom: 24px;
-
     button {
         width: 83px;
         height: 43px;

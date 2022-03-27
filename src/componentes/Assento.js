@@ -2,16 +2,14 @@ import { useState } from "react";
 import styled from "styled-components";
 
 export default function Assento(props) {
-    const { id, name, isAvailable, CorSelecionado, CorDisponivel, CorIndisponivel, dadosParaEnviar, setDadosParaEnviar } = props;
+    const { id, name, isAvailable, CorSelecionado, CorDisponivel, CorIndisponivel, dadosParaEnviar, setDadosParaEnviar, cadeiras, setCadeiras } = props;
 
     const [selecionado, setSelecionado] = useState(false);
-    const [cor, setCor] = useState(
-        { fundo: CorDisponivel.fundo, borda: CorDisponivel.borda }
-    );
+    const [cor, setCor] = useState({ fundo: CorDisponivel.fundo, borda: CorDisponivel.borda });
 
     function tirarElemento(array, item) {
-        return array.filter(function(ele){ 
-            return ele !== item; 
+        return array.filter(function(elemento){ 
+            return elemento !== item; 
         });
     }
 
@@ -20,11 +18,13 @@ export default function Assento(props) {
             <AssentoEstilo onClick={() => {
                 if (selecionado === false) {
                     setDadosParaEnviar({ ...dadosParaEnviar, ids: [...dadosParaEnviar.ids, id] });
+                    setCadeiras([...cadeiras, name]);
                     setSelecionado(true);
                     setCor({ fundo: CorSelecionado.fundo, borda: CorSelecionado.borda });
                 }
                 else if (selecionado === true) {
                     setDadosParaEnviar({ ...dadosParaEnviar, ids: tirarElemento(dadosParaEnviar.ids, id)});
+                    setCadeiras(tirarElemento(cadeiras, name));
                     setSelecionado(false);
                     setCor({ fundo: CorDisponivel.fundo, borda: CorDisponivel.borda });
                 }
@@ -35,11 +35,13 @@ export default function Assento(props) {
             <AssentoEstilo onClick={() => {
                 if (selecionado === false) {
                     setDadosParaEnviar({ ...dadosParaEnviar, ids: [...dadosParaEnviar.ids, id] });
+                    setCadeiras([...cadeiras, name]);
                     setSelecionado(true);
                     setCor({ fundo: CorSelecionado.fundo, borda: CorSelecionado.borda });
                 }
                 else if (selecionado === true) {
                     setDadosParaEnviar({ ...dadosParaEnviar, ids: tirarElemento(dadosParaEnviar.ids, id)});
+                    setCadeiras(tirarElemento(cadeiras, name));
                     setSelecionado(false);
                     setCor({ fundo: CorDisponivel.fundo, borda: CorDisponivel.borda });
                 }

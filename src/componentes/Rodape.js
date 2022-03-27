@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export default function Rodape(props) {
-    const { dadosRodape } = props;
-    if (dadosRodape.filme === "") {
+    const { dadosRodape, envioBemSucedido } = props;
+    if (dadosRodape.filme === "" || envioBemSucedido === true) {
         return <></>
     } else {
         return (
@@ -27,10 +27,7 @@ const Footer = styled.footer`
     display: flex;
     padding: 14px;
     img {
-        /* width: 48px;
-        height: 72px; */
         padding: 8px;
-
         background: #FFFFFF;
         box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
         border-radius: 3px;

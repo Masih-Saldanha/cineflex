@@ -1,10 +1,9 @@
 import styled from "styled-components";
-
 import CartazDoFilme from "./CartazDoFilme";
 
 export default function Home(props) {
     const { dadosRodape, setDadosRodape } = props;
-    console.log("Renderizei Home")
+    // console.log("Renderizei Home")
 
     return (
         <>

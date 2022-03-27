@@ -1,27 +1,39 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Sucesso(props) {
-    const { dadosRodape, setDadosRodape } = props
+    const { dadosRodape, setDadosRodape, dadosParaEnviar, setDadosParaEnviar, cadeiras, setCadeiras, setEnvioBemSucedido } = props;
+
     return (
         <>
             <TituloSucesso>Pedido feito com sucesso!</TituloSucesso>
             <CaixaDeDados>
                 <h2>Filme e sessão</h2>
                 <p>{dadosRodape.filme}</p>
-                <p>24/06/2021 {dadosRodape.hora}</p>
+                <p>{dadosRodape.data} {dadosRodape.hora}</p>
             </CaixaDeDados>
             <CaixaDeDados>
                 <h2>Ingressos</h2>
-                <p>Assento 15</p>
-                <p>Assento 15</p>
+                {cadeiras.map((cadeira, indice) => {
+                    return (
+                        <p key={indice}>Assento {cadeira}</p>
+                    )
+                })}
             </CaixaDeDados>
             <CaixaDeDados>
                 <h2>Comprador</h2>
-                <p>Nome: João da Silva Sauro</p>
-                <p>CPF: 123.456.789-10</p>
+                <p>Nome: {dadosParaEnviar.name}</p>
+                <p>CPF: {dadosParaEnviar.cpf[0] + dadosParaEnviar.cpf[1] + dadosParaEnviar.cpf[2]}.{dadosParaEnviar.cpf[3] + dadosParaEnviar.cpf[4] + dadosParaEnviar.cpf[5]}.{dadosParaEnviar.cpf[6] + dadosParaEnviar.cpf[7] + dadosParaEnviar.cpf[8]}-{dadosParaEnviar.cpf[9] + dadosParaEnviar.cpf[10]}</p>
             </CaixaDeDados>
             <Container>
-                <button>Voltar pra Home</button>
+                <Link onClick={() => {
+                    setDadosRodape({filme: "", imagem: "", data: "", diaDaSemana: "", hora: ""});
+                    setDadosParaEnviar({ ids: [], name: "", cpf: "" });
+                    setCadeiras([]);
+                    setEnvioBemSucedido(false);
+                }} to="/">
+                    <button>Voltar pra Home</button>
+                </Link>
             </Container>
         </>
     )

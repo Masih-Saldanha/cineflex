@@ -8,25 +8,23 @@ export default function Filme(props) {
     const {  dadosRodape, setDadosRodape } = props;
 
     const { idFilme } = useParams();
-    console.log(`Renderizei filme ${idFilme}`)
-
+    // console.log(`Renderizei filme ${idFilme}`)
     const [dadosDiasDisponiveis, setDadosDiasDisponiveis] = useState([]);
-    console.log("Dados Disponiveis: ", dadosDiasDisponiveis);
+    // console.log("Dados Disponiveis: ", dadosDiasDisponiveis);
     
     useEffect(
         () => {
-            console.log(`Entrei no useEffect do filme ${idFilme}`);
-
+            // console.log(`Entrei no useEffect do filme ${idFilme}`);
             const promise = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${idFilme}/showtimes`)
             promise.then(response => {
                 const { days } = response.data;
                 setDadosDiasDisponiveis(days);
             })
             promise.catch(response => {
+                alert("Algo deu errado, o servidor deve estar off-line, tente mais tarde.");
                 console.log(response.response);
             })
-
-            console.log(`Sai no useEffect do filme ${idFilme}`);
+            // console.log(`Sai no useEffect do filme ${idFilme}`);
         }, [])
 
     return (
