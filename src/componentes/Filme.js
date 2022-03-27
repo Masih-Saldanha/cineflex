@@ -6,8 +6,6 @@ import SelecaoDataHora from "./SelecaoDataHora";
 
 export default function Filme(props) {
     const {  dadosRodape, setDadosRodape, setTelaInicial, setVoltou } = props;
-    
-    setTelaInicial(false);
 
     const { idFilme } = useParams();
     // console.log(`Renderizei filme ${idFilme}`)
@@ -42,6 +40,7 @@ export default function Filme(props) {
                         dadosRodape={dadosRodape} 
                         setDadosRodape={setDadosRodape}
                         setVoltou={setVoltou}
+                        setTelaInicial={setTelaInicial}
                     />
                 )
             })}

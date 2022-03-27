@@ -4,7 +4,7 @@ import axios from "axios";
 import styled from "styled-components";
 
 export default function CartazDoFilme(props) {
-    const { dadosRodape, setDadosRodape } = props;
+    const { dadosRodape, setDadosRodape, setTelaInicial } = props;
     // console.log("Renderizei CartazDoFilme");
     const [listaDeFilmes, setListaDeFilmes] = useState([])
     // console.log("Lista de Filmes: ", listaDeFilmes);
@@ -24,7 +24,10 @@ export default function CartazDoFilme(props) {
         <MenuDeFilmes>
             {listaDeFilmes.map(movie => {
                 return (
-                    <Link onClick={() => setDadosRodape({...dadosRodape, filme: movie.title, imagem: movie.posterURL})} key={movie.id} to={`/filme/${movie.id}`}>
+                    <Link onClick={() => {
+                        setDadosRodape({ ...dadosRodape, filme: movie.title, imagem: movie.posterURL });
+                        setTelaInicial(false);
+                    }} key={movie.id} to={`/filme/${movie.id}`}>
                         <img src={movie.posterURL} alt={movie.title} />
                     </Link>
                 )

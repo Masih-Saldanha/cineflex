@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Sucesso(props) {
-    const { dadosRodape, setDadosRodape, dadosParaEnviar, setDadosParaEnviar, cadeiras, setCadeiras, setTelaInicial } = props;
-    setTelaInicial(true);
+    const { dadosRodape, setDadosRodape, dadosParaEnviar, setDadosParaEnviar, cadeiras, setCadeiras } = props;
 
     return (
         <>

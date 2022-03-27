@@ -5,7 +5,6 @@ import ListaDeAssentos from "./ListaDeAssentos";
 
 export default function Sessao(props) {
     const { dadosParaEnviar, setDadosParaEnviar, cadeiras, setCadeiras, setTelaInicial } = props;
-    setTelaInicial(false);
     const { idSessao } = useParams();
     let navigate = useNavigate();
 
@@ -24,6 +23,7 @@ export default function Sessao(props) {
             const promise = axios.post("https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many", dadosParaEnviar);
             promise.then(response => {
                 // console.log("Deu bom o envio", response);
+                setTelaInicial(true);
                 navigate("/sucesso/")
             });
             promise.catch(response => {

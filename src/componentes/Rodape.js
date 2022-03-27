@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export default function Rodape(props) {
     const { dadosRodape, telaInicial, voltou } = props;
+    
     if (telaInicial === true) {
         return <></>
     } else {
