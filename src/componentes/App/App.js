@@ -17,15 +17,16 @@ export default function App() {
     const [dadosParaEnviar, setDadosParaEnviar] = useState({ ids: [], name: "", cpf: "" });
     const [cadeiras, setCadeiras ] = useState([]);
     const [envioBemSucedido, setEnvioBemSucedido] = useState(false);
+    const [telaInicial, setTelaInicial] = useState(true);
 
     return (
         <BrowserRouter>
-            <Topo />
+            <Topo telaInicial={telaInicial} />
             <Routes>
-                <Route path="/" element={<Home dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} />} />
-                <Route path="/filme/:idFilme" element={<Filme dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} />} />
-                <Route path="/sessao/:idSessao" element={<Sessao dadosParaEnviar={dadosParaEnviar} setDadosParaEnviar={setDadosParaEnviar} setEnvioBemSucedido={setEnvioBemSucedido} cadeiras={cadeiras} setCadeiras={setCadeiras} />} />
-                <Route path="/sucesso/" element={<Sucesso dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} dadosParaEnviar={dadosParaEnviar} setDadosParaEnviar={setDadosParaEnviar} cadeiras={cadeiras} setEnvioBemSucedido={setEnvioBemSucedido} />} />
+                <Route path="/" element={<Home dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} setTelaInicial={setTelaInicial} />} />
+                <Route path="/filme/:idFilme" element={<Filme dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} setTelaInicial={setTelaInicial} />} />
+                <Route path="/sessao/:idSessao" element={<Sessao dadosParaEnviar={dadosParaEnviar} setDadosParaEnviar={setDadosParaEnviar} setEnvioBemSucedido={setEnvioBemSucedido} cadeiras={cadeiras} setCadeiras={setCadeiras} setTelaInicial={setTelaInicial} />} />
+                <Route path="/sucesso/" element={<Sucesso dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} dadosParaEnviar={dadosParaEnviar} setDadosParaEnviar={setDadosParaEnviar} cadeiras={cadeiras} setEnvioBemSucedido={setEnvioBemSucedido} setTelaInicial={setTelaInicial} />} />
             </Routes>
             <Rodape dadosRodape={dadosRodape} envioBemSucedido={envioBemSucedido} />
         </BrowserRouter>

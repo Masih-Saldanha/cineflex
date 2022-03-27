@@ -5,7 +5,8 @@ import styled from "styled-components";
 import SelecaoDataHora from "./SelecaoDataHora";
 
 export default function Filme(props) {
-    const {  dadosRodape, setDadosRodape } = props;
+    const {  dadosRodape, setDadosRodape, setTelaInicial } = props;
+    setTelaInicial(false);
 
     const { idFilme } = useParams();
     // console.log(`Renderizei filme ${idFilme}`)

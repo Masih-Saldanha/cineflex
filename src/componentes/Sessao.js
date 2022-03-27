@@ -4,7 +4,8 @@ import styled from "styled-components";
 import ListaDeAssentos from "./ListaDeAssentos";
 
 export default function Sessao(props) {
-    const { dadosParaEnviar, setDadosParaEnviar, setEnvioBemSucedido, cadeiras, setCadeiras } = props
+    const { dadosParaEnviar, setDadosParaEnviar, setEnvioBemSucedido, cadeiras, setCadeiras, setTelaInicial } = props;
+    setTelaInicial(false);
     const { idSessao } = useParams();
     let navigate = useNavigate();
 

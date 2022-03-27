@@ -2,7 +2,8 @@ import styled from "styled-components";
 import CartazDoFilme from "./CartazDoFilme";
 
 export default function Home(props) {
-    const { dadosRodape, setDadosRodape } = props;
+    const { dadosRodape, setDadosRodape, setTelaInicial } = props;
+    setTelaInicial(true);
     // console.log("Renderizei Home")
 
     return (
