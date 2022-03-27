@@ -13,17 +13,27 @@ export default function Sessao(props) {
 
     function enviarDados(e) {
         e.preventDefault()
-        // console.log("Enviando: ", dadosParaEnviar);
-        const promise = axios.post("https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many", dadosParaEnviar);
-        promise.then(response => {
-            setEnvioBemSucedido(true);
-            // console.log("Deu bom o envio", response);
-            navigate("/sucesso/")
-        });
-        promise.catch(response => {
-            alert("Algo deu errado, confira se seus dados estão corretos.");
-            console.log("Deu ruim o envio", response)
-        });
+        if (dadosParaEnviar.name === "") {
+            alert("Preencha seu nome");
+        } else if (dadosParaEnviar.cpf === "") {
+            alert("Preencha seu cpf");
+        } else if (dadosParaEnviar.cpf.length !== 11) {
+            alert("Seu CPF deve ter apenas 11 dígito");
+        } else if (dadosParaEnviar.ids.length === 0) {
+            alert("Escolha ao menos um assento");
+        } else {
+            // console.log("Enviando: ", dadosParaEnviar);
+            const promise = axios.post("https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many", dadosParaEnviar);
+            promise.then(response => {
+                setEnvioBemSucedido(true);
+                // console.log("Deu bom o envio", response);
+                navigate("/sucesso/")
+            });
+            promise.catch(response => {
+                alert("Algo deu errado, confira se seus dados estão corretos.");
+                console.log("Deu ruim o envio", response)
+            });
+        }
     }
 
     return (
