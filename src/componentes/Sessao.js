@@ -18,7 +18,7 @@ export default function Sessao(props) {
         } else if (dadosParaEnviar.cpf === "") {
             alert("Preencha seu cpf");
         } else if (dadosParaEnviar.cpf.length !== 11) {
-            alert("Seu CPF deve ter apenas 11 dígito");
+            alert("Seu CPF deve ter apenas 11 dígitos");
         } else if (dadosParaEnviar.ids.length === 0) {
             alert("Escolha ao menos um assento");
         } else {
