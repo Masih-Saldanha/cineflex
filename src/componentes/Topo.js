@@ -2,13 +2,15 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 export default function Topo(props) {
-    const { telaInicial, setVoltou } = props;
+    const { telaInicial, setVoltou, dadosParaEnviar, setDadosParaEnviar, setCadeiras } = props;
     const navigate = useNavigate();
     return (
         <>
             {telaInicial ? <></> : <BotaoVoltar onClick={() => {
-                navigate(-1);
+                setDadosParaEnviar({ ...dadosParaEnviar, ids: [] });
+                setCadeiras([]);
                 setVoltou(false);
+                navigate(-1);
             }}>Voltar</BotaoVoltar>}
             <TopoFixo >CINEFLEX</TopoFixo>
         </>

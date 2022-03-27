@@ -21,7 +21,7 @@ export default function App() {
 
     return (
         <BrowserRouter>
-            <Topo telaInicial={telaInicial} setVoltou={setVoltou} />
+            <Topo telaInicial={telaInicial} setVoltou={setVoltou} dadosParaEnviar={dadosParaEnviar} setDadosParaEnviar={setDadosParaEnviar} setCadeiras={setCadeiras} />
             <Routes>
                 <Route path="/" element={<Home dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} setTelaInicial={setTelaInicial} />} />
                 <Route path="/filme/:idFilme" element={<Filme dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} setTelaInicial={setTelaInicial} voltou={voltou} setVoltou={setVoltou} />} />
