@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 
-export default function CartazDoFilme() {
+export default function CartazDoFilme(props) {
+    const { dadosRodape, setDadosRodape } = props;
     console.log("Renderizei CartazDoFilme");
     const [listaDeFilmes, setListaDeFilmes] = useState([])
     console.log("Lista de Filmes: ", listaDeFilmes);
@@ -25,7 +26,7 @@ export default function CartazDoFilme() {
         <MenuDeFilmes>
             {listaDeFilmes.map(movie => {
                 return (
-                    <Link key={movie.id} to={`/filme/${movie.id}`}>
+                    <Link onClick={() => setDadosRodape({...dadosRodape, filme: movie.title, imagem: movie.posterURL})} key={movie.id} to={`/filme/${movie.id}`}>
                         <img src={movie.posterURL} alt={movie.title} />
                     </Link>
                 )

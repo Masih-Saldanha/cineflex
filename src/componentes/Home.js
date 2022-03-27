@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 import CartazDoFilme from "./CartazDoFilme";
 
-export default function Home() {
+export default function Home(props) {
+    const { dadosRodape, setDadosRodape } = props;
     console.log("Renderizei Home")
 
     return (
         <>
             <TituloSelecaoDeFilme>Selecione o filme</TituloSelecaoDeFilme>
-            <CartazDoFilme />
+            <CartazDoFilme dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} />
         </>
     )
 }

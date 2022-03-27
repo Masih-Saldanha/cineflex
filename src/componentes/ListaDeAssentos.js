@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Assento from "./Assento";
 
 export default function ListaDeAssentos(props) {
-    const { idSessao } = props;
+    const { idSessao, dadosParaEnviar, setDadosParaEnviar } = props;
 
     const [listaDeAssentos, setListaDeAssentos] = useState([])
     // console.log("Lista de Assentos: ", listaDeAssentos);
@@ -15,7 +15,7 @@ export default function ListaDeAssentos(props) {
     const CorIndisponivel = { fundo: "#FBE192", borda: "#F7C52B" };
 
 
-    const [dadosParaEnviar, setDadosParaEnviar] = useState({ ids: [], name: "Masih", cpf: "12345678900" });
+    // const [dadosParaEnviar, setDadosParaEnviar] = useState({ ids: [], name: "Masih", cpf: "12345678900" });
 
     useEffect(() => {
         console.log("Entrei no useEffect da lista de assentos");
@@ -49,7 +49,7 @@ export default function ListaDeAssentos(props) {
                 })}
             </ContainerAssentos>
             
-            <ContainerAssentos onClick={() => console.log(dadosParaEnviar)}>
+            <ContainerAssentos>
                 <Legenda>
                     <AssentoEstilo corFundo={CorSelecionado.fundo} corBorda={CorSelecionado.borda}></AssentoEstilo>
                     <h1>Selecionado</h1>

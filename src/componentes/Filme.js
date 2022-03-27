@@ -4,7 +4,9 @@ import axios from "axios";
 import styled from "styled-components";
 import SelecaoDataHora from "./SelecaoDataHora";
 
-export default function Filme() {
+export default function Filme(props) {
+    const {  dadosRodape, setDadosRodape } = props;
+
     const { idFilme } = useParams();
     console.log(`Renderizei filme ${idFilme}`)
 
@@ -37,6 +39,8 @@ export default function Filme() {
                         weekday={dia.weekday}
                         date={dia.date}
                         showtimes={dia.showtimes}
+                        dadosRodape={dadosRodape} 
+                        setDadosRodape={setDadosRodape}
                     />
                 )
             })}
