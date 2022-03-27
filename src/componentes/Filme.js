@@ -5,7 +5,8 @@ import styled from "styled-components";
 import SelecaoDataHora from "./SelecaoDataHora";
 
 export default function Filme(props) {
-    const {  dadosRodape, setDadosRodape, setTelaInicial } = props;
+    const {  dadosRodape, setDadosRodape, setTelaInicial, setVoltou } = props;
+    
     setTelaInicial(false);
 
     const { idFilme } = useParams();
@@ -40,6 +41,7 @@ export default function Filme(props) {
                         showtimes={dia.showtimes}
                         dadosRodape={dadosRodape} 
                         setDadosRodape={setDadosRodape}
+                        setVoltou={setVoltou}
                     />
                 )
             })}

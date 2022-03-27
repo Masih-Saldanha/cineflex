@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export default function Rodape(props) {
-    const { dadosRodape, envioBemSucedido } = props;
-    if (dadosRodape.filme === "" || envioBemSucedido === true) {
+    const { dadosRodape, telaInicial, voltou } = props;
+    if (telaInicial === true) {
         return <></>
     } else {
         return (
@@ -10,7 +10,7 @@ export default function Rodape(props) {
                 <img src={dadosRodape.imagem} alt={dadosRodape.imagem}></img>
                 <div>
                     <h1>{dadosRodape.filme}</h1>
-                    {dadosRodape.hora === "" ? <></> : <h1>{dadosRodape.diaDaSemana} - {dadosRodape.hora}</h1>}
+                    {voltou === false ? <></> : <h1>{dadosRodape.diaDaSemana} - {dadosRodape.hora}</h1>}
                 </div>
             </Footer>
         )

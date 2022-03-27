@@ -4,12 +4,10 @@ import styled from "styled-components";
 import ListaDeAssentos from "./ListaDeAssentos";
 
 export default function Sessao(props) {
-    const { dadosParaEnviar, setDadosParaEnviar, setEnvioBemSucedido, cadeiras, setCadeiras, setTelaInicial } = props;
+    const { dadosParaEnviar, setDadosParaEnviar, cadeiras, setCadeiras, setTelaInicial } = props;
     setTelaInicial(false);
     const { idSessao } = useParams();
     let navigate = useNavigate();
-
-    // console.log(`Renderizei a Sessão: ${idSessao}`);
 
     function enviarDados(e) {
         e.preventDefault()
@@ -25,7 +23,6 @@ export default function Sessao(props) {
             // console.log("Enviando: ", dadosParaEnviar);
             const promise = axios.post("https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many", dadosParaEnviar);
             promise.then(response => {
-                setEnvioBemSucedido(true);
                 // console.log("Deu bom o envio", response);
                 navigate("/sucesso/")
             });

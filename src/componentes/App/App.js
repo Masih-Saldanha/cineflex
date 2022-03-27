@@ -16,19 +16,19 @@ export default function App() {
     const [dadosRodape, setDadosRodape] = useState({filme: "", imagem: "", data: "", diaDaSemana: "", hora: ""});
     const [dadosParaEnviar, setDadosParaEnviar] = useState({ ids: [], name: "", cpf: "" });
     const [cadeiras, setCadeiras ] = useState([]);
-    const [envioBemSucedido, setEnvioBemSucedido] = useState(false);
     const [telaInicial, setTelaInicial] = useState(true);
+    const [voltou, setVoltou] = useState(false);
 
     return (
         <BrowserRouter>
-            <Topo telaInicial={telaInicial} />
+            <Topo telaInicial={telaInicial} setVoltou={setVoltou} />
             <Routes>
                 <Route path="/" element={<Home dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} setTelaInicial={setTelaInicial} />} />
-                <Route path="/filme/:idFilme" element={<Filme dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} setTelaInicial={setTelaInicial} />} />
-                <Route path="/sessao/:idSessao" element={<Sessao dadosParaEnviar={dadosParaEnviar} setDadosParaEnviar={setDadosParaEnviar} setEnvioBemSucedido={setEnvioBemSucedido} cadeiras={cadeiras} setCadeiras={setCadeiras} setTelaInicial={setTelaInicial} />} />
-                <Route path="/sucesso/" element={<Sucesso dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} dadosParaEnviar={dadosParaEnviar} setDadosParaEnviar={setDadosParaEnviar} cadeiras={cadeiras} setEnvioBemSucedido={setEnvioBemSucedido} setTelaInicial={setTelaInicial} />} />
+                <Route path="/filme/:idFilme" element={<Filme dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} setTelaInicial={setTelaInicial} voltou={voltou} setVoltou={setVoltou} />} />
+                <Route path="/sessao/:idSessao" element={<Sessao dadosParaEnviar={dadosParaEnviar} setDadosParaEnviar={setDadosParaEnviar} cadeiras={cadeiras} setCadeiras={setCadeiras} setTelaInicial={setTelaInicial} />} />
+                <Route path="/sucesso/" element={<Sucesso dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} dadosParaEnviar={dadosParaEnviar} setDadosParaEnviar={setDadosParaEnviar} cadeiras={cadeiras} setTelaInicial={setTelaInicial} />} />
             </Routes>
-            <Rodape dadosRodape={dadosRodape} envioBemSucedido={envioBemSucedido} />
+            <Rodape dadosRodape={dadosRodape} telaInicial={telaInicial} voltou={voltou} />
         </BrowserRouter>
     )
 }

@@ -66,7 +66,7 @@ export default function ListaDeAssentos(props) {
 }
 
 const ContainerAssentos = styled.figure`
-    width: calc(100vw - 41px);
+    width: 339px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;

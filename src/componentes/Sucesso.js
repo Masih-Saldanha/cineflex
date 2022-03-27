@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Sucesso(props) {
-    const { dadosRodape, setDadosRodape, dadosParaEnviar, setDadosParaEnviar, cadeiras, setCadeiras, setEnvioBemSucedido, setTelaInicial } = props;
-    setTelaInicial(false);
+    const { dadosRodape, setDadosRodape, dadosParaEnviar, setDadosParaEnviar, cadeiras, setCadeiras, setTelaInicial } = props;
+    setTelaInicial(true);
 
     return (
         <>
@@ -31,7 +31,6 @@ export default function Sucesso(props) {
                     setDadosRodape({filme: "", imagem: "", data: "", diaDaSemana: "", hora: ""});
                     setDadosParaEnviar({ ids: [], name: "", cpf: "" });
                     setCadeiras([]);
-                    setEnvioBemSucedido(false);
                 }} to="/">
                     <button>Voltar pra Home</button>
                 </Link>
