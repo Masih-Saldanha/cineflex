@@ -8,8 +8,8 @@ export default function Assento(props) {
     const [cor, setCor] = useState({ fundo: CorDisponivel.fundo, borda: CorDisponivel.borda });
 
     function tirarElemento(array, item) {
-        return array.filter(function(elemento){ 
-            return elemento !== item; 
+        return array.filter(function (elemento) {
+            return elemento !== item;
         });
     }
 
@@ -23,7 +23,7 @@ export default function Assento(props) {
                     setCor({ fundo: CorSelecionado.fundo, borda: CorSelecionado.borda });
                 }
                 else if (selecionado === true) {
-                    setDadosParaEnviar({ ...dadosParaEnviar, ids: tirarElemento(dadosParaEnviar.ids, id)});
+                    setDadosParaEnviar({ ...dadosParaEnviar, ids: tirarElemento(dadosParaEnviar.ids, id) });
                     setCadeiras(tirarElemento(cadeiras, name));
                     setSelecionado(false);
                     setCor({ fundo: CorDisponivel.fundo, borda: CorDisponivel.borda });
@@ -40,7 +40,7 @@ export default function Assento(props) {
                     setCor({ fundo: CorSelecionado.fundo, borda: CorSelecionado.borda });
                 }
                 else if (selecionado === true) {
-                    setDadosParaEnviar({ ...dadosParaEnviar, ids: tirarElemento(dadosParaEnviar.ids, id)});
+                    setDadosParaEnviar({ ...dadosParaEnviar, ids: tirarElemento(dadosParaEnviar.ids, id) });
                     setCadeiras(tirarElemento(cadeiras, name));
                     setSelecionado(false);
                     setCor({ fundo: CorDisponivel.fundo, borda: CorDisponivel.borda });
@@ -50,8 +50,8 @@ export default function Assento(props) {
     } else {
         return (
             name.length === 1 ?
-            <AssentoEstilo onClick={() => alert("Esse assento não está disponível")} corFundo={CorIndisponivel.fundo} corBorda={CorIndisponivel.borda} key={id}>0{name}</AssentoEstilo> : 
-            <AssentoEstilo onClick={() => alert("Esse assento não está disponível")} corFundo={CorIndisponivel.fundo} corBorda={CorIndisponivel.borda} key={id}>{name}</AssentoEstilo>
+                <AssentoEstilo onClick={() => alert("Esse assento não está disponível")} corFundo={CorIndisponivel.fundo} corBorda={CorIndisponivel.borda} key={id}>0{name}</AssentoEstilo> :
+                <AssentoEstilo onClick={() => alert("Esse assento não está disponível")} corFundo={CorIndisponivel.fundo} corBorda={CorIndisponivel.borda} key={id}>{name}</AssentoEstilo>
         )
     }
 }

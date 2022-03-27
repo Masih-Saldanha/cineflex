@@ -9,7 +9,11 @@ export default function Home(props) {
     return (
         <>
             <TituloSelecaoDeFilme>Selecione o filme</TituloSelecaoDeFilme>
-            <CartazDoFilme dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} setTelaInicial={setTelaInicial} />
+            <CartazDoFilme
+                dadosRodape={dadosRodape}
+                setDadosRodape={setDadosRodape}
+                setTelaInicial={setTelaInicial}
+            />
         </>
     )
 }

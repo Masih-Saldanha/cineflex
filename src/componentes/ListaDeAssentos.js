@@ -24,7 +24,7 @@ export default function ListaDeAssentos(props) {
         })
         // console.log("Sai do useEffect da lista de assentos");
     }, [])
-    
+
     return (
         <>
             <ContainerAssentos>
@@ -40,13 +40,13 @@ export default function ListaDeAssentos(props) {
                             CorIndisponivel={CorIndisponivel}
                             dadosParaEnviar={dadosParaEnviar}
                             setDadosParaEnviar={setDadosParaEnviar}
-                            cadeiras={cadeiras} 
+                            cadeiras={cadeiras}
                             setCadeiras={setCadeiras}
                         />
                     )
                 })}
             </ContainerAssentos>
-            
+
             <ContainerAssentos>
                 <Legenda>
                     <AssentoEstilo corFundo={CorSelecionado.fundo} corBorda={CorSelecionado.borda}></AssentoEstilo>

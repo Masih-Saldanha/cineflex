@@ -27,7 +27,7 @@ export default function Sucesso(props) {
             </CaixaDeDados>
             <Container>
                 <Link onClick={() => {
-                    setDadosRodape({filme: "", imagem: "", data: "", diaDaSemana: "", hora: ""});
+                    setDadosRodape({ filme: "", imagem: "", data: "", diaDaSemana: "", hora: "" });
                     setDadosParaEnviar({ ids: [], name: "", cpf: "" });
                     setCadeiras([]);
                 }} to="/">

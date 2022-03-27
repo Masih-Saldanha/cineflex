@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export default function SelecaoDataHora(props) {
-    const { weekday, date, showtimes, dadosRodape, setDadosRodape, setVoltou, setTelaInicial } = props;
+    const { weekday, date, showtimes, dadosRodape, setDadosRodape, setTelaInicial, setVoltou } = props;
 
     return (
         <>
@@ -11,10 +11,10 @@ export default function SelecaoDataHora(props) {
                 {showtimes.map(hora => {
                     return (
                         <Link onClick={() => {
-                            setDadosRodape({...dadosRodape, diaDaSemana: weekday, data: date, hora: hora.name});
+                            setDadosRodape({ ...dadosRodape, diaDaSemana: weekday, data: date, hora: hora.name });
                             setTelaInicial(false);
                             setVoltou(true);
-                            }} key={hora.id} to={`/sessao/${hora.id}`}>
+                        }} key={hora.id} to={`/sessao/${hora.id}`}>
                             <button key={hora.id}>{hora.name}</button>
                         </Link>
                     )

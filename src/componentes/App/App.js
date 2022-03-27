@@ -13,22 +13,62 @@ import "../App/styles.css";
 
 export default function App() {
     // console.log("Renderizei App");
-    const [dadosRodape, setDadosRodape] = useState({filme: "", imagem: "", data: "", diaDaSemana: "", hora: ""});
+    const [dadosRodape, setDadosRodape] = useState({ filme: "", imagem: "", data: "", diaDaSemana: "", hora: "" });
     const [dadosParaEnviar, setDadosParaEnviar] = useState({ ids: [], name: "", cpf: "" });
-    const [cadeiras, setCadeiras ] = useState([]);
+    const [cadeiras, setCadeiras] = useState([]);
     const [telaInicial, setTelaInicial] = useState(true);
     const [voltou, setVoltou] = useState(false);
 
     return (
         <BrowserRouter>
-            <Topo telaInicial={telaInicial} setVoltou={setVoltou} dadosParaEnviar={dadosParaEnviar} setDadosParaEnviar={setDadosParaEnviar} setCadeiras={setCadeiras} />
+            <Topo
+                telaInicial={telaInicial}
+                setVoltou={setVoltou}
+                dadosParaEnviar={dadosParaEnviar}
+                setDadosParaEnviar={setDadosParaEnviar}
+                setCadeiras={setCadeiras}
+            />
             <Routes>
-                <Route path="/" element={<Home dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} setTelaInicial={setTelaInicial} />} />
-                <Route path="/filme/:idFilme" element={<Filme dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} setTelaInicial={setTelaInicial} voltou={voltou} setVoltou={setVoltou} />} />
-                <Route path="/sessao/:idSessao" element={<Sessao dadosParaEnviar={dadosParaEnviar} setDadosParaEnviar={setDadosParaEnviar} cadeiras={cadeiras} setCadeiras={setCadeiras} setTelaInicial={setTelaInicial} />} />
-                <Route path="/sucesso/" element={<Sucesso dadosRodape={dadosRodape} setDadosRodape={setDadosRodape} dadosParaEnviar={dadosParaEnviar} setDadosParaEnviar={setDadosParaEnviar} cadeiras={cadeiras} setTelaInicial={setTelaInicial} />} />
+                <Route path="/" element={
+                    <Home
+                        dadosRodape={dadosRodape}
+                        setDadosRodape={setDadosRodape}
+                        setTelaInicial={setTelaInicial}
+                    />
+                } />
+                <Route path="/filme/:idFilme" element={
+                    <Filme
+                        dadosRodape={dadosRodape}
+                        setDadosRodape={setDadosRodape}
+                        setTelaInicial={setTelaInicial}
+                        setVoltou={setVoltou}
+                    />
+                } />
+                <Route path="/sessao/:idSessao" element={
+                    <Sessao
+                        dadosParaEnviar={dadosParaEnviar}
+                        setDadosParaEnviar={setDadosParaEnviar}
+                        cadeiras={cadeiras}
+                        setCadeiras={setCadeiras}
+                        setTelaInicial={setTelaInicial}
+                    />
+                } />
+                <Route path="/sucesso/" element={
+                    <Sucesso
+                        dadosRodape={dadosRodape}
+                        setDadosRodape={setDadosRodape}
+                        dadosParaEnviar={dadosParaEnviar}
+                        setDadosParaEnviar={setDadosParaEnviar}
+                        cadeiras={cadeiras}
+                        setCadeiras={setCadeiras}
+                    />
+                } />
             </Routes>
-            <Rodape dadosRodape={dadosRodape} telaInicial={telaInicial} voltou={voltou} />
+            <Rodape
+                dadosRodape={dadosRodape}
+                telaInicial={telaInicial}
+                voltou={voltou}
+            />
         </BrowserRouter>
     )
 }

@@ -5,13 +5,13 @@ import styled from "styled-components";
 import SelecaoDataHora from "./SelecaoDataHora";
 
 export default function Filme(props) {
-    const {  dadosRodape, setDadosRodape, setTelaInicial, setVoltou } = props;
+    const { dadosRodape, setDadosRodape, setTelaInicial, setVoltou } = props;
 
     const { idFilme } = useParams();
     // console.log(`Renderizei filme ${idFilme}`)
     const [dadosDiasDisponiveis, setDadosDiasDisponiveis] = useState([]);
     // console.log("Dados Disponiveis: ", dadosDiasDisponiveis);
-    
+
     useEffect(
         () => {
             // console.log(`Entrei no useEffect do filme ${idFilme}`);
@@ -37,10 +37,10 @@ export default function Filme(props) {
                         weekday={dia.weekday}
                         date={dia.date}
                         showtimes={dia.showtimes}
-                        dadosRodape={dadosRodape} 
+                        dadosRodape={dadosRodape}
                         setDadosRodape={setDadosRodape}
-                        setVoltou={setVoltou}
                         setTelaInicial={setTelaInicial}
+                        setVoltou={setVoltou}
                     />
                 )
             })}

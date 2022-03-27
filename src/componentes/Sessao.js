@@ -36,7 +36,13 @@ export default function Sessao(props) {
     return (
         <>
             <TituloSelecaoDeAssento>Selecione o(s) assento(s)</TituloSelecaoDeAssento>
-            <ListaDeAssentos idSessao={idSessao} dadosParaEnviar={dadosParaEnviar} setDadosParaEnviar={setDadosParaEnviar} cadeiras={cadeiras} setCadeiras={setCadeiras} />
+            <ListaDeAssentos
+                idSessao={idSessao}
+                dadosParaEnviar={dadosParaEnviar}
+                setDadosParaEnviar={setDadosParaEnviar}
+                cadeiras={cadeiras}
+                setCadeiras={setCadeiras}
+            />
             <Dados onSubmit={enviarDados}>
                 <label for="nome">Nome do comprador:</label>
                 <input
