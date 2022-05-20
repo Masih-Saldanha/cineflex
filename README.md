@@ -8,7 +8,7 @@ In this app you can choose the movie, the session and the seats you want to do a
 
 I created this project with the aim of simulating a real movie theater seat reservation environment with good interactivity and responsiveness in addition to challenging myself.
 
-## technologies used
+## Technologies used
 
 ![image](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
 ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
