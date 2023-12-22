@@ -21,7 +21,7 @@ I created this project with the aim of simulating a real movie theater seat rese
 
 ## How to run
 
-You can just access the deploy in: https://projeto9-cineflex-zeta.vercel.app/
+You can just access the deploy in: https://cineflex-masih.vercel.app/
 
 or
 
